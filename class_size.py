@@ -76,18 +76,18 @@ def ClassSizes():
     
     # compute the biased pmf
     biased_pmf = BiasPmf(pmf, 'observed')
-    print 'mean', biased_pmf.Mean()
-    print 'var', biased_pmf.Var()
+    print 'biased mean', biased_pmf.Mean()
+    print 'biased var', biased_pmf.Var()
 
     # unbias the biased pmf
     unbiased_pmf = UnbiasPmf(biased_pmf, 'unbiased')
-    print 'mean', unbiased_pmf.Mean()
-    print 'var', unbiased_pmf.Var()
+    print 'unbiased mean', unbiased_pmf.Mean()
+    print 'unbiased var', unbiased_pmf.Var()
 
     # plot the Pmfs
-    thinkplot.Pmfs([pmf, biased_pmf])
+    thinkplot.Cdfs([pmf.MakeCdf(), biased_pmf.MakeCdf()])
     thinkplot.Show(xlabel='Class size',
-                   ylabel='PMF')
+                   ylabel='CMF')
     
  
 def main():
