@@ -65,7 +65,7 @@ def main():
     xs, ys = zip(*res)
 
     a = 1.0
-    b = 0.0
+    b = 0
     xs = [a * x + b for x in xs]
 
     print 'mean, var of x', thinkstats2.MeanVar(xs)
