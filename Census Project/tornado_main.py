@@ -1,12 +1,15 @@
+# Access this webpage from a browser at url: http://127.0.0.1:8888/
+
 import tornado.ioloop
 import tornado.web
 
-class MainHandler(tornado.web.RequestHandler):
+class IndexHandler(tornado.web.RequestHandler):
+    ''' index http normal handler'''
     def get(self):
-        self.write("Hello, world")
+        self.render("index.html")
 
 application = tornado.web.Application([
-    (r"/", MainHandler),
+    (r"/", IndexHandler),
 ])
 
 if __name__ == "__main__":
